@@ -1,0 +1,78 @@
+<div class="flex items-center justify-center h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600">
+    <form
+      [formGroup]="configForm"
+      (ngSubmit)="saveConfig()"
+      class="w-full max-w-2xl p-8 bg-white rounded-2xl shadow-2xl transform transition-all duration-500 hover:shadow-lg"
+    >
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 text-center">
+        <h2 class="text-3xl font-semibold mb-2">Ticket Configuration</h2>
+        <p class="text-sm">Configure your ticketing system settings below.</p>
+      </div>
+  
+      <div class="p-6 space-y-6">
+        <div class="flex flex-col">
+          <label for="totalTickets" class="text-sm font-medium text-gray-600">Total Tickets</label>
+          <input
+            id="totalTickets"
+            type="number"
+            formControlName="totalTickets"
+            placeholder="Enter total tickets"
+            class="mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+          <div *ngIf="configForm.get('totalTickets')?.invalid && configForm.get('totalTickets')?.touched" class="text-red-500 text-sm">
+            Total tickets are required and must be greater than 0.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="ticketReleaseRate" class="text-sm font-medium text-gray-600">Ticket Release Rate</label>
+          <input
+            id="ticketReleaseRate"
+            type="number"
+            formControlName="ticketReleaseRate"
+            placeholder="Enter ticket release rate"
+            class="mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+          <div *ngIf="configForm.get('ticketReleaseRate')?.invalid && configForm.get('ticketReleaseRate')?.touched" class="text-red-500 text-sm">
+            Ticket release rate is required and must be greater than 0.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="customerRetrievalRate" class="text-sm font-medium text-gray-600">Customer Retrieval Rate</label>
+          <input
+            id="customerRetrievalRate"
+            type="number"
+            formControlName="customerRetrievalRate"
+            placeholder="Enter customer retrieval rate"
+            class="mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+          <div *ngIf="configForm.get('customerRetrievalRate')?.invalid && configForm.get('customerRetrievalRate')?.touched" class="text-red-500 text-sm">
+            Customer retrieval rate is required and must be greater than 0.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="maxTicketCapacity" class="text-sm font-medium text-gray-600">Max Ticket Capacity</label>
+          <input
+            id="maxTicketCapacity"
+            type="number"
+            formControlName="maxTicketCapacity"
+            placeholder="Enter max ticket capacity"
+            class="mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          />
+          <div *ngIf="configForm.get('maxTicketCapacity')?.invalid && configForm.get('maxTicketCapacity')?.touched" class="text-red-500 text-sm">
+            Max ticket capacity is required and must be greater than 0.
+          </div>
+        </div>
+      </div>
+  
+      <button
+        type="submit"
+        class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-lg hover:bg-indigo-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        Save Configuration
+      </button>
+    </form>
+  </div>
+  

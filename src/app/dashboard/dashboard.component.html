@@ -1,0 +1,107 @@
+<div class="min-h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-extrabold text-center text-white mb-16">Ticketing Dashboard</h1>
+  
+      <!-- Summary Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="p-6 bg-white rounded-xl shadow-md text-center">
+          <h2 class="text-xl font-semibold text-gray-600">Total Tickets</h2>
+          <p class="text-2xl font-bold text-gray-800">{{ totalTickets }}</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md text-center">
+          <h2 class="text-xl font-semibold text-gray-600">Max Pool Size</h2>
+          <p class="text-2xl font-bold text-gray-800">{{ maximumPoolSize }}</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md text-center">
+          <h2 class="text-xl font-semibold text-gray-600">Tickets in Pool</h2>
+          <p class="text-2xl font-bold text-gray-800">{{ availableTicketsInPool }}</p>
+        </div>
+      </div>
+  
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="p-6 bg-white rounded-xl shadow-md">
+          <h2 class="text-xl font-semibold text-gray-600 text-center mb-4">Ticket Status</h2>
+          <apx-chart
+            [series]="ticketStatusChartOptions.series"
+            [chart]="ticketStatusChartOptions.chart"
+            [labels]="ticketStatusChartOptions.labels"
+            [responsive]="ticketStatusChartOptions.responsive"
+          ></apx-chart>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md">
+          <h2 class="text-xl font-semibold text-gray-600 text-center mb-4">Pool Status</h2>
+          <apx-chart
+            [series]="poolStatusChartOptions.series"
+            [chart]="poolStatusChartOptions.chart"
+            [labels]="poolStatusChartOptions.labels"
+            [responsive]="poolStatusChartOptions.responsive"
+          ></apx-chart>
+        </div>
+      </div>
+  
+      <!-- Active Vendors and Customers -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-xl shadow-md">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Active Vendors</h2>
+          <table class="table-auto w-full text-left bg-white rounded">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2">Vendor ID</th>
+                <th class="px-4 py-2">Vendor Name</th>
+                <th class="px-4 py-2">Ticket Count</th>
+                <th class="px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vendor of activeVendors" class="border-b">
+                <td class="px-4 py-2">{{ vendor.id }}</td>
+                <td class="px-4 py-2">{{ vendor.name }}</td>
+                <td class="px-4 py-2">{{ vendor.availableTickets }}</td>
+                <td class="px-4 py-2">
+                  <button
+                    (click)="stopVendor(vendor.id)"
+                    [disabled]="!vendor.status"
+                    class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 disabled:bg-gray-300"
+                  >
+                    Stop
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <div class="p-6 bg-white rounded-xl shadow-md">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Active Customers</h2>
+          <table class="table-auto w-full text-left bg-white rounded">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2">Customer ID</th>
+                <th class="px-4 py-2">Customer Name</th>
+                <th class="px-4 py-2">Ticket Count</th>
+                <th class="px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of activeCustomers" class="border-b">
+                <td class="px-4 py-2">{{ customer.id }}</td>
+                <td class="px-4 py-2">{{ customer.name }}</td>
+                <td class="px-4 py-2">{{ customer.availableTickets }}</td>
+                <td class="px-4 py-2">
+                  <button
+                    (click)="stopCustomer(customer.id)"
+                    [disabled]="!customer.status"
+                    class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 disabled:bg-gray-300"
+                  >
+                    Stop
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

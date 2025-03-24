@@ -1,0 +1,36 @@
+.h-screen {
+    height: 100vh;
+  }
+  
+  .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #38b2ac, #4299e1, #805ad5);
+  }
+  
+  .bg-white {
+    background-color: #fff;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem;
+  }
+  
+  .text-gray-800 {
+    color: #2d3748;
+  }
+  
+  .text-gray-700 {
+    color: #4a5568;
+  }
+  
+  .bg-gray-100 {
+    background-color: #f7fafc;
+  }
+  

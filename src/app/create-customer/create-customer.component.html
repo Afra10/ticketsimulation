@@ -1,0 +1,121 @@
+<div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600">
+    <form
+      [formGroup]="customerForm"
+      (ngSubmit)="onSubmit()"
+      class="w-full max-w-2xl bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-2xl"
+    >
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 text-center">
+        <h2 class="text-3xl font-bold mb-2">Add New Customer</h2>
+        <p class="text-sm">Fill in the details below to add a new customer.</p>
+      </div>
+  
+      <div class="p-6 space-y-6">
+        <div class="flex flex-col">
+          <label for="name" class="text-sm font-medium text-gray-600">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="Enter full name"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+          <div *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched" class="text-red-500 text-sm">
+            Name is required.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="number" class="text-sm font-medium text-gray-600">Phone Number</label>
+          <input
+            type="text"
+            id="number"
+            formControlName="number"
+            placeholder="Enter phone number"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+          <div *ngIf="customerForm.get('number')?.invalid && customerForm.get('number')?.touched" class="text-red-500 text-sm">
+            Valid phone number is required.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="email" class="text-sm font-medium text-gray-600">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter email address"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+          <div *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched" class="text-red-500 text-sm">
+            Valid email is required.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="address" class="text-sm font-medium text-gray-600">Address</label>
+          <input
+            type="text"
+            id="address"
+            formControlName="address"
+            placeholder="Enter address"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+          <div *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.touched" class="text-red-500 text-sm">
+            Address is required.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="gender" class="text-sm font-medium text-gray-600">Gender</label>
+          <select
+            id="gender"
+            formControlName="gender"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <div *ngIf="customerForm.get('gender')?.invalid && customerForm.get('gender')?.touched" class="text-red-500 text-sm">
+            Gender is required.
+          </div>
+        </div>
+  
+        <div class="flex flex-col">
+          <label for="interval" class="text-sm font-medium text-gray-600">Interval (Days)</label>
+          <input
+            type="number"
+            id="interval"
+            formControlName="interval"
+            placeholder="Enter interval in days"
+            class="mt-1 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          />
+          <div *ngIf="customerForm.get('interval')?.invalid && customerForm.get('interval')?.touched" class="text-red-500 text-sm">
+            Interval must be at least 1 day.
+          </div>
+        </div>
+  
+        <div class="flex items-center space-x-3">
+          <input
+            type="checkbox"
+            id="specialAccess"
+            formControlName="specialAccess"
+            class="h-5 w-5 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+          />
+          <label for="specialAccess" class="text-sm font-medium text-gray-600">
+            Grant Special Access
+          </label>
+        </div>
+  
+        <button
+          type="submit"
+          class="w-full py-3 bg-purple-600 text-white font-semibold rounded-md shadow-lg hover:bg-purple-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        >
+          Add Customer
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,59 @@
+<nav class="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <!-- Navigation Links -->
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-8">
+            <a routerLink="/" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-lg font-medium">Dashboard</a>
+            <a
+              routerLink="/view-live-logs"
+              class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-lg font-medium"
+            >
+              ViewLogs
+            </a>
+            <a
+              routerLink="/configuration"
+              class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-lg font-medium"
+              [class.cursor-not-allowed]="isStarted"
+              [class.opacity-50]="isStarted"
+            >
+              Configuration
+            </a>
+            <a routerLink="/admin-page" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-lg font-medium">Admin</a>
+            <a routerLink="/transaction" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-lg font-medium">History</a>
+          </div>
+        </div>
+  
+        <!-- Control Buttons -->
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 space-x-4">
+          <button
+            (click)="handleStart()"
+            [disabled]="isStarted"
+            class="px-5 py-2 rounded-lg text-sm font-medium transition-all bg-gradient-to-r from-green-700 to-green-500 text-white"
+            [class.cursor-not-allowed]="isStarted"
+            [class.opacity-50]="isStarted"
+          >
+            Start
+          </button>
+  
+          <button
+            (click)="handleStop()"
+            [disabled]="!isStarted"
+            class="px-5 py-2 rounded-lg text-sm font-medium transition-all bg-gradient-to-r from-red-700 to-red-500 text-white"
+            [class.cursor-not-allowed]="!isStarted"
+            [class.opacity-50]="!isStarted"
+          >
+            Stop
+          </button>
+  
+          <button
+            (click)="handleReset()"
+            class="px-5 py-2 rounded-lg text-sm font-medium transition-all bg-gradient-to-r from-yellow-500 to-yellow-400 text-white"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

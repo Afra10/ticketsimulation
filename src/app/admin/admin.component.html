@@ -1,0 +1,116 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 py-12">
+    <h1 class="text-4xl font-bold text-white text-center mb-8">Admin Dashboard</h1>
+  
+    <div class="w-full max-w-7xl bg-transparent shadow-xl rounded-xl p-8 space-y-10">
+      <!-- Vendors Section -->
+      <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold">Vendors</h2>
+          <a
+            routerLink="/create-vendor"
+            class="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition duration-300"
+          >
+            Create Vendor
+          </a>
+        </div>
+  
+        <div class="overflow-x-auto rounded-lg">
+          <table class="min-w-full text-sm text-left text-gray-500">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="py-3 px-4 font-medium text-gray-700">Name</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Number</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Email</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let vendor of vendors"
+                class="border-b hover:bg-gray-50 transition duration-200"
+              >
+                <td class="py-4 px-4 text-gray-700">{{ vendor.name }}</td>
+                <td class="py-4 px-4 text-gray-700">{{ vendor.number }}</td>
+                <td class="py-4 px-4 text-gray-700">{{ vendor.email }}</td>
+                <td class="py-4 px-4">
+                  <div class="flex gap-3">
+                    <a
+                      [routerLink]="['/update-vendor', vendor.id]"
+                      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200"
+                    >
+                      Update
+                    </a>
+                    <button
+                      (click)="handleDelete('vendor', vendor.id, 'Vendor')"
+                      class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-200"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+      <!-- Customers Section -->
+      <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold">Customers</h2>
+          <a
+            routerLink="/create-customer"
+            class="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition duration-300"
+          >
+            Create Customer
+          </a>
+        </div>
+  
+        <div class="overflow-x-auto rounded-lg">
+          <table class="min-w-full text-sm text-left text-gray-500">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="py-3 px-4 font-medium text-gray-700">Name</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Number</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Email</th>
+                <th class="py-3 px-4 font-medium text-gray-700">VIP Status</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Gender</th>
+                <th class="py-3 px-4 font-medium text-gray-700">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let customer of customers"
+                class="border-b hover:bg-gray-50 transition duration-200"
+              >
+                <td class="py-4 px-4 text-gray-700">{{ customer.name }}</td>
+                <td class="py-4 px-4 text-gray-700">{{ customer.number }}</td>
+                <td class="py-4 px-4 text-gray-700">{{ customer.email }}</td>
+                <td class="py-4 px-4 text-gray-700">
+                  {{ customer.specialAccess ? 'VIP' : 'Not a VIP' }}
+                </td>
+                <td class="py-4 px-4 text-gray-700">{{ customer.gender }}</td>
+                <td class="py-4 px-4">
+                  <div class="flex gap-3">
+                    <a
+                      [routerLink]="['/update-customer', customer.id]"
+                      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200"
+                    >
+                      Update
+                    </a>
+                    <button
+                      (click)="handleDelete('customer', customer.id, 'Customer')"
+                      class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-200"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
