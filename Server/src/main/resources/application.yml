@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+  file:
+    name: logs/application.log
+    max-size: 10MB
+    total-size-cap: 50MB
+    max-history: 5
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

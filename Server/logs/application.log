@@ -1,0 +1,25 @@
+2024-12-12 02:28:32 [main] INFO  c.e.t.CdpApplicationTests - Starting CdpApplicationTests using Java 17.0.4 with PID 33072 (started by Asus in D:\TV Series\Server-20241130T160943Z-001\Server)
+2024-12-12 02:28:32 [main] DEBUG c.e.t.CdpApplicationTests - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-12 02:28:32 [main] INFO  c.e.t.CdpApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-12-12 02:28:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-12 02:28:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123 ms. Found 3 JPA repository interfaces.
+2024-12-12 02:28:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-12 02:28:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-12 02:28:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-12 02:28:37 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-12 02:28:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-12 02:28:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e5e6573
+2024-12-12 02:28:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-12 02:28:37 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-12 02:28:39 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-12 02:28:39 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-12 02:28:39 [main] INFO  c.e.t.service.ConfigurationService - Configuration loaded successfully.
+2024-12-12 02:28:39 [main] INFO  c.e.t.service.ConfigurationService - Configuration loaded successfully.
+2024-12-12 02:28:39 [main] INFO  c.e.t.service.ConfigurationService - Configuration loaded successfully.
+2024-12-12 02:28:39 [main] INFO  c.e.ticketHandler.model.TicketPool - Ticket pool set up with max capacity: 20 and total tickets: 100
+2024-12-12 02:28:40 [main] INFO  c.e.t.service.TicketService - TicketService initialized with the provided TicketPool and ConfigurationService.
+2024-12-12 02:28:40 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-12 02:28:41 [main] INFO  c.e.t.CdpApplicationTests - Started CdpApplicationTests in 9.242 seconds (process running for 11.309)
+2024-12-12 02:28:42 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-12 02:28:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-12 02:28:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
